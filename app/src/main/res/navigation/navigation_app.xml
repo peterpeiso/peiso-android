@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_welcome">
+
+    <fragment
+        android:id="@+id/fragment_welcome"
+        android:name="user.peiso.com.au.ui.welcome.UiWelcomeFragment"/>
+
+    <fragment
+        android:id="@+id/fragment_login_create"
+        android:name="user.peiso.com.au.ui.login.create.UiLoginCreateFragment"/>
+
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="user.peiso.com.au.ui.login.login.UiLoginFragment"/>
+
+    <fragment
+        android:id="@+id/fragment_login_mobile"
+        android:name="user.peiso.com.au.ui.login.mobile.UiLoginMobileFragment"/>
+
+    <fragment
+        android:id="@+id/fragment_login_verify"
+        android:name="user.peiso.com.au.ui.login.verify.UiLoginVerifyFragment"/>
+
+    <fragment
+        android:id="@+id/fragment_login_forgot"
+        android:name="user.peiso.com.au.ui.login.forgot.UiLoginForgotFragment"/>
+
+    <fragment
+        android:id="@+id/fragment_today"
+        android:name="user.peiso.com.au.ui.today.UiTodaySummaryFragment"/>
+
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="user.peiso.com.au.ui.home.UiHomeFragment"/>
+
+    <fragment
+        android:id="@+id/fragment_chart"
+        android:name="user.peiso.com.au.ui.chart.UiChartFragment"/>
+
+    <fragment
+        android:id="@+id/app_web"
+        android:name="user.peiso.com.au.ui.web.UiWebFragment"/>
+
+</navigation>

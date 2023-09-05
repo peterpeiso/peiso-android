@@ -1,0 +1,14 @@
+ext {
+
+    android = [
+            versionCode          : 3,
+            versionName          : "1.0.2",
+            compileSdkVersion    : 33,
+            applicationId        : 'user.peiso.com.au',
+            minSdkVersion        : 23,
+            targetSdkVersion     : 33,
+            defaultPublishConfig : 'release',
+            publishNonDefault    : true
+    ]
+
+}

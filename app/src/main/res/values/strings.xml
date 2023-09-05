@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Peiso</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="passcode">Passcode</string>
+    <string name="forgot_passcode_u"><u>Forgot Passcode?</u></string>
+    <string name="forgot_passcode">Forgot Passcode?</string>
+    <string name="login">Login</string>
+    <string name="confirm">Confirm</string>
+    <string name="create_passcode">Create Passcode</string>
+    <string name="guidance">Guidance</string>
+    <string name="daily_guidance">Daily Guidance</string>
+    <string name="revenue_deviation">Revenue Deviation</string>
+    <string name="revenue">Revenue</string>
+    <string name="daily">Daily</string>
+    <string name="weekly">Weekly</string>
+    <string name="target_roster">Target Roster</string>
+    <string name="view_full_data">View full data</string>
+    <string name="labour">Labour</string>
+    <string name="please_enter_verification_code">Please enter verification code</string>
+    <string name="resend">Resend</string>
+    <string name="forgot_passcode_mobile">Forgot Passcode</string>
+    <string name="reset_passcode">Reset Passcode</string>
+    <string name="create_new_passcode">Create New Passcode</string>
+    <string name="select_venue">Select Venue</string>
+    <string name="log_out">Log Out</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="labour_deviation">Labour Deviation</string>
+    <string name="your_account_has_been_deleted">Your account has been deleted</string>
+    <string name="passcode_update_succeed">Passcode has been successfully updated!</string>
+    <string name="delete_confirm_hint">After deleting your account, you will no longer be able to log in to the Peiso APP, Are you sure you want to continue?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="today_s_summary">Today\'s summary</string>
+    <string name="total_revenue_today">Total Revenue</string>
+    <string name="total_labour_today">Total Labour</string>
+    <string name="profit_target">Profit target</string>
+    <string name="target">Target</string>
+    <string name="actual">Actual</string>
+    <string name="ok">Ok</string>
+    <string name="peiso_max">PEISO</string>
+    <string name="revenue_guidance">Revenue + / -</string>
+    <string name="labour_guidance">Labour + / -</string>
+    <string name="default_price">$0.0</string>
+    <string name="variable_actual">Variable Actual</string>
+    <string name="variable_target">Variable Target</string>
+    <string name="total_target_roster">Total Target Roster</string>
+</resources>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="click"
+            type="i.library.base.listener.ClickInformBack" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iImageLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_logo_red"
+            android:layout_marginTop="59dp"
+            android:layout_marginStart="@dimen/default_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/iTextToday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/today_s_summary"
+            android:textSize="20sp"
+            android:fontFamily="@font/medium"
+            android:layout_marginTop="98dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <View
+            android:id="@+id/iViewRevenue"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            android:background="#151C27"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/iTextToday"
+            android:layout_marginHorizontal="@dimen/default_margin"/>
+
+        <TextView
+            android:id="@+id/iTextRevenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_revenue_today"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/semibold"
+            android:textSize="16sp"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@id/iViewRevenue"
+            app:layout_constraintTop_toTopOf="@id/iViewRevenue"
+            app:layout_constraintBottom_toTopOf="@id/iTextRevenueValue"
+            />
+
+        <TextView
+            android:id="@+id/iTextRevenueValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:fontFamily="@font/semibold"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/iViewRevenue"
+            app:layout_constraintTop_toBottomOf="@id/iTextRevenue"
+            app:layout_constraintStart_toStartOf="@id/iViewRevenue"
+            tools:text="$89,935.5"/>
+
+        <View
+            android:id="@+id/iViewLabour"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            android:background="#151C27"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/iViewRevenue"
+            android:layout_marginHorizontal="@dimen/default_margin"/>
+
+        <TextView
+            android:id="@+id/iTextLabour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_labour_today"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/semibold"
+            android:textSize="16sp"
+            android:drawablePadding="10dp"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@id/iViewLabour"
+            app:layout_constraintTop_toTopOf="@id/iViewLabour"
+            app:layout_constraintBottom_toTopOf="@id/iTextLabourValue" />
+
+        <TextView
+            android:id="@+id/iTextLabourValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:fontFamily="@font/semibold"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/iViewLabour"
+            app:layout_constraintTop_toBottomOf="@id/iTextLabour"
+            app:layout_constraintStart_toStartOf="@id/iViewLabour"
+            tools:text="$89,935.5"/>
+
+        <ImageView
+            android:id="@+id/iImageLabourValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:onClick="@{click::onClick}"
+            app:layout_constraintEnd_toEndOf="@id/iViewLabour"
+            app:layout_constraintTop_toTopOf="@id/iViewLabour"
+            app:layout_constraintBottom_toBottomOf="@id/iViewLabour"
+            android:src="@mipmap/icon_summary_change"
+            android:contentDescription="@null" />
+
+        <Button
+            android:id="@+id/iBtnConfirm"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:onClick="@{click::onClick}"
+            android:background="@drawable/stroke_theme_4"
+            android:layout_marginTop="112dp"
+            android:text="@string/confirm"
+            android:fontFamily="@font/medium"
+            android:textColor="@color/color_theme"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iViewLabour"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

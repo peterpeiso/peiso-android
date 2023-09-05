@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="click"
+            type="i.library.base.listener.ClickInformBack" />
+        <variable
+            name="model"
+            type="user.peiso.com.au.ui.home.labour.UiHomeLabourVModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/iRefreshGuidance"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/iTextTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/labour"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/medium"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/iViewScope"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/shape_radius_2b3444_4"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/iTextTitle"/>
+
+                    <TextView
+                        android:id="@+id/iTextDaily"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:text="@string/daily"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:background="@drawable/select_select_daily"
+                        android:onClick="@{click::onClick}"
+                        android:textColor="@drawable/select_peiso_text"
+                        app:layout_constraintTop_toTopOf="@id/iViewScope"
+                        app:layout_constraintBottom_toBottomOf="@id/iViewScope"
+                        app:layout_constraintStart_toStartOf="@id/iViewScope"
+                        app:layout_constraintEnd_toStartOf="@id/iTextWeekly"
+                        />
+
+                    <TextView
+                        android:id="@+id/iTextWeekly"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:text="@string/weekly"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:onClick="@{click::onClick}"
+                        android:textColor="@drawable/select_peiso_text"
+                        android:background="@drawable/select_select_daily"
+                        app:layout_constraintEnd_toEndOf="@id/iViewScope"
+                        app:layout_constraintTop_toTopOf="@id/iViewScope"
+                        app:layout_constraintBottom_toBottomOf="@id/iViewScope"
+                        app:layout_constraintStart_toEndOf="@id/iTextDaily"
+                        />
+
+                    <androidx.constraintlayout.widget.Group
+                        android:id="@+id/iGroupDW"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:constraint_referenced_ids="iViewScope,iTextDaily,iTextWeekly"/>
+
+                    <View
+                        android:id="@+id/iViewTarget"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:background="@drawable/shape_radius_151c27_4"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="-20dp"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+                        app:layout_constraintBottom_toBottomOf="@id/iTextTargetValue"
+                        app:layout_constraintTop_toBottomOf="@id/iViewScope"/>
+
+                    <TextView
+                        android:id="@+id/iTextTarget"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_target_roster"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/semibold"
+                        android:layout_marginTop="@dimen/default_margin"
+                        android:layout_marginStart="@dimen/default_margin"
+                        app:layout_constraintStart_toStartOf="@id/iViewTarget"
+                        app:layout_constraintTop_toTopOf="@id/iViewTarget"
+                        />
+
+                    <TextView
+                        android:id="@+id/iTextTargetValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/semibold"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintStart_toStartOf="@id/iTextTarget"
+                        app:layout_constraintTop_toBottomOf="@id/iTextTarget"
+                        tools:text="$2000"/>
+
+                    <ImageView
+                        android:id="@+id/iImageChange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/default_margin"
+                        app:layout_constraintEnd_toEndOf="@id/iViewTarget"
+                        app:layout_constraintTop_toTopOf="@id/iViewTarget"
+                        app:layout_constraintBottom_toBottomOf="@id/iViewTarget"
+                        android:onClick="@{click::onClick}"
+                        android:src="@mipmap/icon_summary_change"
+                        android:contentDescription="@null" />
+
+                    <View
+                        android:id="@+id/iViewTargetZ"
+                        android:layout_width="0dp"
+                        android:layout_height="116dp"
+                        android:background="@drawable/shape_radius_151c27_4"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="-20dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/iViewActual"
+                        app:layout_constraintBottom_toBottomOf="@id/iTextTargetZValue"
+                        android:layout_marginStart="@dimen/default_margin"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintTop_toBottomOf="@id/iViewTarget"/>
+
+                    <TextView
+                        android:id="@+id/iTextTargetZ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/variable_target"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/semibold"
+                        android:layout_marginTop="@dimen/default_margin"
+                        android:layout_marginStart="@dimen/default_margin"
+                        app:layout_constraintStart_toStartOf="@id/iViewTargetZ"
+                        app:layout_constraintTop_toTopOf="@id/iViewTargetZ"
+                        />
+
+                    <!-- -->
+                    <TextView
+                        android:id="@+id/iTextTargetZValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/semibold"
+                        android:maxLines="1"
+                        android:textSize="24sp"
+                        app:layout_constraintStart_toStartOf="@id/iTextTargetZ"
+                        app:layout_constraintTop_toBottomOf="@id/iTextTargetZ"
+                        tools:text="$2000" />
+
+                    <View
+                        android:id="@+id/iViewActual"
+                        android:layout_width="0dp"
+                        android:layout_height="116dp"
+                        android:background="@drawable/shape_radius_151c27_4"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="-20dp"
+                        android:layout_marginEnd="20dp"
+                        app:layout_constraintStart_toEndOf="@id/iViewTargetZ"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="@id/iTextActualValue"
+                        app:layout_constraintTop_toBottomOf="@id/iViewTarget"/>
+
+                    <TextView
+                        android:id="@+id/iTextActual"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/variable_actual"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/semibold"
+                        android:layout_marginTop="@dimen/default_margin"
+                        android:layout_marginStart="@dimen/default_margin"
+                        app:layout_constraintStart_toStartOf="@id/iViewActual"
+                        app:layout_constraintTop_toTopOf="@id/iViewActual"
+                        />
+
+                    <TextView
+                        android:id="@+id/iTextActualValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/semibold"
+                        android:layout_marginTop="20dp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textSize="24sp"
+                        app:layout_constraintStart_toStartOf="@id/iTextActual"
+                        app:layout_constraintTop_toBottomOf="@id/iTextActual"
+                        tools:text="$2000"/>
+
+                    <!-- Chart -->
+                    <View
+                        android:id="@+id/iViewChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginHorizontal="@dimen/default_margin"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/chart_background"
+                        app:layout_constraintTop_toBottomOf="@id/iViewActual"
+                        app:layout_constraintBottom_toBottomOf="@id/iViewChartBottom"/>
+
+                    <user.peiso.com.au.view.LineChartView
+                        android:id="@+id/iChartView"
+                        android:layout_width="0dp"
+                        android:layout_height="180dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintEnd_toEndOf="@id/iViewChart"
+                        app:layout_constraintStart_toStartOf="@id/iViewChart"
+                        app:layout_constraintTop_toTopOf="@id/iViewChart"/>
+
+                    <TextView
+                        android:id="@+id/iTextChartTarget"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/target"
+                        android:layout_marginStart="@dimen/default_margin"
+                        android:drawablePadding="8dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/semibold"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toStartOf="@id/iTextChartActual"
+                        app:layout_constraintStart_toStartOf="@id/iChartView"
+                        app:layout_constraintTop_toBottomOf="@id/iChartView"
+                        app:drawableStartCompat="@drawable/shape_chart_white" />
+
+                    <TextView
+                        android:id="@+id/iTextChartTargetValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="24sp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/semibold"
+                        android:text="@string/default_price"
+                        app:layout_constraintEnd_toEndOf="@id/iTextChartTarget"
+                        app:layout_constraintStart_toStartOf="@id/iTextChartTarget"
+                        app:layout_constraintTop_toBottomOf="@id/iTextChartTarget"/>
+
+                    <TextView
+                        android:id="@+id/iTextChartActual"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/actual"
+                        android:layout_marginEnd="@dimen/default_margin"
+                        android:drawablePadding="8dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toEndOf="@id/iTextChartTarget"
+                        app:layout_constraintEnd_toEndOf="@id/iChartView"
+                        app:layout_constraintTop_toBottomOf="@id/iChartView"
+                        app:drawableStartCompat="@drawable/shape_chart_blue" />
+
+                    <TextView
+                        android:id="@+id/iTextChartActualValue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="24sp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/semibold"
+                        android:textColor="#2FCBFF"
+                        android:text="@string/default_price"
+                        app:layout_constraintEnd_toEndOf="@id/iTextChartActual"
+                        app:layout_constraintStart_toStartOf="@id/iTextChartActual"
+                        app:layout_constraintTop_toBottomOf="@id/iTextChartActual"/>
+
+                    <View
+                        android:id="@+id/iViewChartBottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        app:layout_constraintTop_toBottomOf="@id/iTextChartActualValue"/>
+
+                    <View
+                        android:id="@+id/iViewContentBottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="100dp"
+                        app:layout_constraintTop_toBottomOf="@id/iViewChartBottom"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <FrameLayout
+            android:id="@+id/iLayoutLoading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_background"
+            android:onClick="@{click::onClick}"
+            tools:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+    </FrameLayout>
+</layout>

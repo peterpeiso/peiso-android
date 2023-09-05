@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="click"
+            type="i.library.base.listener.ClickInformBack" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/iImageBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_back"
+                android:layout_marginStart="20dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@null"
+                android:onClick="@{click::onClick}"/>
+
+            <TextView
+                android:id="@+id/iTextTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:fontFamily="@font/medium"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="50dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="@string/app_name"/>
+        </FrameLayout>
+
+        <ProgressBar
+            android:id="@+id/iWebProgress"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="bottom"
+            android:max="100"
+            android:progress="0"
+            android:progressBackgroundTint="#00000000"
+            android:progressTint="@color/black"
+            style="?android:attr/progressBarStyleHorizontal" />
+
+        <WebView
+            android:id="@+id/iWebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+</layout>

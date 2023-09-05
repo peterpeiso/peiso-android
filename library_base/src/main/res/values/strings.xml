@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="recycle_load">Loading\.\.\.</string>
+    <string name="recycle_end">Loading End.</string>
+    <string name="recycle_over">Loading Over.</string>
+    <string name="recycle_error">Loading Error.</string>
+</resources>

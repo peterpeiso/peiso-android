@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="click"
+            type="i.library.base.listener.ClickInformBack" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_window_i"
+            android:layout_marginEnd="52dp"
+            android:layout_gravity="end"
+            android:contentDescription="@null" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2b3445"
+            android:layout_marginHorizontal="20dp">
+
+            <TextView
+                android:id="@+id/iTextVenue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:fontFamily="@font/medium"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="@dimen/default_margin"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/select_venue"/>
+
+            <i.library.base.view.MaxHeightScroll
+                android:id="@+id/iScrollVenues"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/iTextVenue"
+                app:mMaxHeight="260dp">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/iRecycleVenues"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_venue"/>
+            </i.library.base.view.MaxHeightScroll>
+
+            <View
+                android:id="@+id/iViewLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/default_margin"
+                android:layout_marginHorizontal="@dimen/default_margin"
+                android:alpha="0.15"
+                app:layout_constraintTop_toBottomOf="@id/iScrollVenues"/>
+
+            <Button
+                android:id="@+id/iBtnLogOut"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/stroke_white_4"
+                android:text="@string/log_out"
+                android:textSize="16sp"
+                app:layout_goneMarginTop="40dp"
+                android:fontFamily="@font/medium"
+                android:textColor="@color/white"
+                android:onClick="@{click::onClick}"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:alpha="0.15"
+                app:layout_constraintStart_toEndOf="@id/iTextDeleteAccount"
+                app:layout_constraintTop_toBottomOf="@id/iViewLine"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <Button
+                android:id="@+id/iTextDeleteAccount"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:text="@string/delete_account"
+                android:textSize="16sp"
+                android:fontFamily="@font/medium"
+                android:layout_marginBottom="40dp"
+                android:onClick="@{click::onClick}"
+                android:background="@drawable/stroke_white_4"
+                android:layout_marginStart="20dp"
+                android:alpha="0.15"
+                app:layout_constraintEnd_toStartOf="@id/iBtnLogOut"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iBtnLogOut"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

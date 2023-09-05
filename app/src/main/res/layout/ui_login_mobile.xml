@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="click"
+            type="i.library.base.listener.ClickInformBack" />
+        <variable
+            name="model"
+            type="user.peiso.com.au.ui.login.mobile.UiLoginMobileVModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iImageBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="54dp"
+            android:layout_marginStart="20dp"
+            android:onClick="@{click::onClick}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@mipmap/icon_login_back"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/iTextTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forgot_passcode_mobile"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="182dp"
+            android:textSize="20sp"
+            android:fontFamily="@font/medium"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/iTextPasscode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mobile_number"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/iTextTitle"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <i.library.base.view.PhoneEditText
+            android:id="@+id/iEditPasscode"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_login_edit"
+            tools:text="000000"
+            android:textColor="@color/white"
+            android:inputType="number"
+            android:textSize="16sp"
+            android:maxLength="6"
+            android:paddingHorizontal="@dimen/default_margin"
+            android:layout_marginHorizontal="@dimen/default_margin"
+            android:text="@={model.mobile}"
+            app:layout_constraintTop_toBottomOf="@id/iTextPasscode"/>
+
+        <Button
+            android:id="@+id/iBtnNext"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:text="@string/next"
+            android:layout_marginTop="192dp"
+            android:textSize="16sp"
+            android:textColor="@color/color_theme"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/shape_btn"
+            android:onClick="@{click::onClick}"
+            app:layout_constraintTop_toBottomOf="@id/iEditPasscode" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

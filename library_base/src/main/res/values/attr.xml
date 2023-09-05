@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="HRestrictionRecycleView">
+        <attr name="maxRecycleHeight" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomSwitchView">
+        <attr name="colorLine" format="color"/>
+        <attr name="colorClose" format="color"/>
+        <attr name="colorOpen" format="color"/>
+        <attr name="colorCircle" format="color"/>
+        <attr name="colorLineOpen" format="color"/>
+        <attr name="colorCircleOpen" format="color"/>
+        <attr name="lineWidth" format="dimension"/>
+        <attr name="circleMargin" format="dimension"/>
+        <attr name="marginBgHeight" format="dimension"/>
+        <attr name="marginBgWidth" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="MaxHeightScroll">
+        <attr name="mMaxHeight" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomSelectView">
+        <attr name="select_height" format="dimension"/>
+        <attr name="select_size" format="dimension"/>
+        <attr name="select_color_select" format="color"/>
+        <attr name="select_color_unselect" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="PhoneEditText">
+        <attr name="codeType" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="SmsNumberView">
+        <attr name="maxLen" format="integer"/>
+    </declare-styleable>
+</resources>

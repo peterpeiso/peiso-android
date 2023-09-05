@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_show</item>
+        <item name="android:windowExitAnimation" >@anim/dialog_gone</item>
+    </style>
+
+    <style name="DialogCenterAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_center_show</item>
+        <item name="android:windowExitAnimation" >@anim/dialog_center_gone</item>
+    </style>
+
+    <style name="DialogBottomAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_show</item>
+        <item name="android:windowExitAnimation" >@anim/dialog_bottom_gone</item>
+    </style>
+
+</resources>
